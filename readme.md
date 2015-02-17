@@ -1,6 +1,6 @@
 # lua-range
 
-Provides a function to create a range iterator. After creation of said iterator it generates values from a lower bound up to an upper bound with an option step width.
+Provides a function to create a range iterator. After creation of said iterator it generates values from a lower bound up to an upper bound with an optional step width. If the iterator position is greater then the upper bound the iterator will return ```nil```.
 
 ## Usage
 
