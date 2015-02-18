@@ -4,13 +4,6 @@ local NUMBER_EPSILON = 0.00000000000001
 local function number_range (from, to, step)
 	local t = {}
 
-	local is_float = (step - math.floor (step)) > NUMBER_EPSILON
-	-- to get the full range where :to is included, it is neccessary to
-	-- raise the upper bound :to by one :step
-	--if is_float then
-	--	to = to + step
-	--end
-
 	for value = from, to, step do
 		t[#t + 1] = value
 	end
@@ -34,20 +27,6 @@ local creators = {
 	number = number_range,
 	string = string_range
 }
-
--- utitly function to reverse a table
-local function reverse (t)
-	local i = 0
-	local n = #table - 1
-	local mid = math.floor (#table / 2)
-	while i < mid do
-		local buffer = t[i]
-		t[i] = t[n]
-		t[n] = buffer
-		n = n - 1
-		i = i + 1
-	end
-end
 
 -- range function export
 return function (from, to, step)
